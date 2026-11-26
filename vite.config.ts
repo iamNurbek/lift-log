@@ -9,5 +9,7 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
+    // Date tests run in New York time so a UTC shortcut would fail them.
+    env: { TZ: 'America/New_York' },
   },
 })
